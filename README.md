@@ -6,3 +6,6 @@ The purposes of this project (tentative) are to:
 - Learn Web Development practices and principles
 - Practice using Git 
 - Explore Software Engineering 
+
+Notes: 
+- Token is contained in config.json
