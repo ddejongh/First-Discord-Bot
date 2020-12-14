@@ -1,0 +1,4 @@
+node_modules/
+config.json
+ideas.txt
+package-lock.json
