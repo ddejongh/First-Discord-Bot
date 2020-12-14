@@ -1,21 +1,17 @@
-const config = require('./config.json');
+const config = require('./config.json');            // read token and prefix from config 
+const Discord = require('discord.js');              // requrie discord.js 
+const fs = require('fs');                           // file system module 
+const client = new Discord.Client();                // create instance of client 
+const prefix = config.prefix;                       // read in prefix from config 
 
-const Discord = require('discord.js');
-
-const fs = require('fs');
-
-const client = new Discord.Client();
-
-const prefix = config.prefix; 
-
-client.commands = new Discord.Collection(); 
+client.commands = new Discord.Collection();         // extends map 
 
 // make sure they are js files 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
+// read in commands from 'commands' directory 
 for(const file of commandFiles) {
     const command = require(`./commands/${file}`);
-
     client.commands.set(command.name, command); 
 }
 
