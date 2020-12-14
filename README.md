@@ -8,4 +8,4 @@ The purposes of this project (tentative) are to:
 - Explore Software Engineering 
 
 Notes: 
-- Token is contained in config.json
+- Token and prefix are contained in config.json
