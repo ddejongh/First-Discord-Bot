@@ -2,9 +2,22 @@ const config = require('./config.json');
 
 const Discord = require('discord.js');
 
+const fs = require('fs');
+
 const client = new Discord.Client();
 
 const prefix = config.prefix; 
+
+client.commands = new Discord.Collection(); 
+
+// make sure they are js files 
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+
+for(const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+
+    client.commands.set(command.name, command); 
+}
 
 // Output ready to console 
 client.once('ready', () => {
@@ -19,10 +32,8 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();                         // force to lower handle caps from user 
 
     if(command === 'ping') {
-        message.channel.send(`Pong: Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms.`);
-    } else if(command == '8ball') {
-        message.channel.send(`Magic 8 ball says: probably not`); 
-    }
+        client.commands.get('ping').execute(message, args); 
+    } 
 }); 
 
 client.login(config.token); 
