@@ -29,7 +29,11 @@ client.on('message', message => {
 
     if(command === 'ping') {
         client.commands.get('ping').execute(message, args); 
-    } 
+    } else if(command === 'command') {
+        client.commands.get('command').execute(message, args, Discord);
+    } else if(command === 'clear') {
+        client.commands.get('clear').execute(message, args); 
+    }
 }); 
 
 client.login(config.token); 
