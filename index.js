@@ -3,6 +3,10 @@ const Discord = require('discord.js');              // requrie discord.js
 const fs = require('fs');                           // file system module 
 const client = new Discord.Client();                // create instance of client 
 const prefix = config.prefix;                       // read in prefix from config 
+const ytdl = require("ytdl-core")                   // include ytdl util for music bot 
+
+// Other variables 
+const queue = new Map(); 
 
 client.commands = new Discord.Collection();         // extends map 
 
@@ -33,6 +37,8 @@ client.on('message', message => {
         client.commands.get('command').execute(message, args, Discord);
     } else if(command === 'clear') {
         client.commands.get('clear').execute(message, args); 
+    } else if(command === 'play') {
+        client.commands.get('play').execute(message, serverQueue, queue);
     }
 }); 
 

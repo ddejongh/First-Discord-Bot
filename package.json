@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/ddejongh/First-Discord-Bot#readme",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "@discordjs/opus": "^0.3.3",
+    "discord.js": "^12.5.1",
+    "ffmpeg": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "ytdl-core": "^4.2.1"
   }
 }
