@@ -25,8 +25,8 @@ module.exports = {
 
         if(!serverQueue) {
             const queueConstruct = {
-                textChannel = message.channel,
-                voiceChannel = voiceChannel, 
+                textChannel: message.channel,
+                voiceChannel: voiceChannel, 
                 connection: null, 
                 songs: [],
                 volume: 5,

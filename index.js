@@ -5,9 +5,6 @@ const client = new Discord.Client();                // create instance of client
 const prefix = config.prefix;                       // read in prefix from config 
 const ytdl = require("ytdl-core")                   // include ytdl util for music bot 
 
-// Other variables 
-const queue = new Map(); 
-
 client.commands = new Discord.Collection();         // extends map 
 
 // make sure they are js files 
@@ -19,13 +16,17 @@ for(const file of commandFiles) {
     client.commands.set(command.name, command); 
 }
 
+// Other variables 
+const queue = new Map(); 
+const serverQueue = queue.get(message.guild.id);
+
 // Output ready to console 
 client.once('ready', () => {
     console.log('Randy has arrived.');
 });
 
 // Add command handler here 
-client.on('message', message => {
+client.on('message', async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return; 
 
     const args = message.content.slice(prefix.length).split(/ +/);      // splice command entries 
