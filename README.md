@@ -2,6 +2,7 @@
 Sense is my first Discord bot. General commands and more coming soon.
 
 To-Do:
+- ~~Add `play` command
 - Fix `play` command
 - Add `stop`
 - Add `weather`
