@@ -1,8 +1,9 @@
 # Sense-First-Discord-Bot
 Sense is my first Discord bot. General commands and more coming soon.
+Hopefully nobody looks at the number of commits, pretty sure they are all "Update README.md"
 
 To-Do:
-- ~~Add `play` command
+- ~~Add `play` command~~
 - Fix `play` command
 - Add `stop`
 - Add `weather`
