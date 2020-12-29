@@ -22,7 +22,7 @@ const serverQueue = queue.get(message.guild.id);
 
 // Output ready to console 
 client.once('ready', () => {
-    console.log('Randy has arrived.');
+    console.log('Sense has arrived.');
 });
 
 // Add command handler here 
