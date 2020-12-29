@@ -1,4 +1,4 @@
-# First-Discord-Bot
+# Sense-First-Discord-Bot
 Sense is my first Discord bot. General commands and more coming soon.
 
 To-Do:
