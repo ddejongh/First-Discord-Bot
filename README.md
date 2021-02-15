@@ -4,6 +4,7 @@ Hopefully nobody looks at the number of commits, pretty sure they are all "Updat
 
 To-Do:
 - ~~Add `play` command~~
+- Restructure command handler
 - Fix `play` command
 - Add `stop`
 - Add `weather`
