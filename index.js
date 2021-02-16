@@ -1,3 +1,8 @@
+// Filename: index.js
+// Changelog: 
+//      - Base code derived from discord.js guide
+//        this provides a solid foundation for the rest of the code. 
+
 const Discord = require('discord.js')       // require discord.js
 const client = new Discord.Client()         // create client instance 
 const ytdl = require('ytdl-core')
